@@ -1,0 +1,181 @@
+html, body {
+    background: white url("images/background.png");
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-semibold;
+    src: url(fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-bold;
+    src: url(fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-light;
+    src: url(fonts/Montserrat-Light.ttf);
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-brand img {
+    height: 2.7rem;
+}
+
+.navbar-nav li {
+    padding-right: 20px;
+}
+
+.nav-link {
+    font-size: 16px;
+    font-weight: lighter;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link {
+    color: #EB5757;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+    color: #EB5757;
+    font-weight: 1000;
+    border-bottom: 1px #2F80ED solid;
+    transition: 0.3s;
+    background-color: inherit;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+.carousel-caption h1 {
+    font-size: 500%;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 15px #000;
+}
+
+.carousel-caption h3 {
+    font-size: 200%;
+    font-weight: 500;
+    text-shadow: 1px 1px 10px #000;
+    padding-bottom: 1rem;
+}
+
+.display-4 {
+    font-family: oxygen;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    padding-bottom: 10px;
+}
+
+.c-box {
+    background: #F5E5E5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 11px;
+    width: auto;
+    height: 265px;
+}
+
+.form-item input[type="text"], .form-item input[type="password"], .form-item input[type="email"] {
+    display: block;
+    color: #787272;
+    font-size: 14px;
+    font-family: oxygen;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+.form-item::after {
+    content: "";
+    /* This is necessary for the pseudo element to work. */
+    display: block;
+    /* This will put the pseudo element on its own line. */
+    width: 80%;
+    /* Change this to whatever width you want. */
+    /* padding-top: 20px; This creates some space between the element and the border. */
+    border-bottom: 1px solid #B1A6A6;
+    /* This creates the border. Replace black with whatever color you want. */
+}
+
+.box-item {
+    height: 25px;
+    margin-bottom: 12px;
+}
+
+.white-content-box {
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    padding-bottom: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all .2s linear;
+    background: #ffffff;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.card {
+    height: auto;
+    background-color: #f2f2f2 !important;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, .1);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all .2s linear;
+}
+
+.card:hover {
+    box-shadow: 2px 8px 25px rgba(0, 0, 0, .15);
+    transform: translate3D(0, -2px, 0);
+}
+
+.card-text {
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.card-img-top {
+    width: auto;
+    margin-left: 24px;
+    margin-top: 20px;
+}
+
+.author-text {
+    font-family: oxygen;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;   
+}
+
+.price-text {
+    font-family: oxygen;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.quantity-text {
+    font-family: oxygen;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}

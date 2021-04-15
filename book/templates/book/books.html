@@ -1,0 +1,36 @@
+{% extends 'book/base_active.html' %}
+{% block books_active %}active{% endblock %}
+{% load static %}
+
+
+{% block body %}
+<div class="container padding">
+    <div class="row padding">
+        <div class="col-md-12 mx-auto text-lg-center">
+            <h3 style="padding-top: 5rem;">Available Book</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-3 mx-auto">
+            {% for book in all_books %}
+            <div class="card-deck">
+                <div class="card shadow-sm">
+                    <a href="{% url 'book:detail' book.id %}">
+                        <img class="card-img-top" src="{{ book.book_cover.url }}" alt="{{ book.book_title }} Book Cover">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.book_title }}</h5>
+                        <p class="card-text">Rp {{ book.unit_price }}</p>
+                        <a href="{% url 'book:detail' book.id %}" class="btn btn-outline-info">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}

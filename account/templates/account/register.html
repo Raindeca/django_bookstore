@@ -1,0 +1,35 @@
+{% extends 'account/base.html' %}
+{% block title %}Register - XYZ Bookstore{% endblock %}
+{% block register_active %}active{% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12 mx-auto d-flex justify-content-center">
+            <div class="">
+                <div class="">
+                    <h3 style="padding-top: 8rem;">Register for an Account</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form style="padding-top: 1rem;" role="form" action="{% url 'account:register' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'account/form_template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-12 mx-auto d-flex justify-content-center" style="padding-top: 1rem;">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-footer">
+                    Already have an account? <a href="{% url 'account:login_user' %}">Click here</a> to log in.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

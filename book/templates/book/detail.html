@@ -1,0 +1,68 @@
+{% extends 'book/base_active.html' %}
+{% block title %}{{ book.book_title }} - XYZ Bookstore{% endblock %}
+{% block albums_active %}active{% endblock %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="container padding">
+    <div class="row padding">
+        <div class="col-md-12 mx-auto text-lg-left">
+            <h5 style="padding-top: 7rem; padding-bottom: 2rem;">Book Detail</h5>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col mx-auto text-center">
+                <a href="{% url 'book:detail' book.id %}">
+                    {% if book.book_cover %}
+                    <img class="" src="{{ book.book_cover.url }}">
+                    {% else %}
+                    <h3>No image to display</h3>
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6 mx-auto">
+            <p class="text-justify display-4">{{ book.book_title }}</p>
+            <p class="text-justify author-text">By: {{ book.author }}</p>
+            <p class="text-justify price-text">Category: {{ book.category }}</p>
+            <p class="text-justify price-text">Price: Rp {{ book.unit_price }}</p>
+            <p class="text-justify quantity-text">Stock: {{ book.quantity }}</p>
+            <br>
+            <form style="padding-top: 1rem;" role="form" action="{% url 'invoice:invoice' %}" method="post"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group mx-auto">
+                    <select name="payment_method" id="payment_method">
+                        <option value="cash">Cash</option>
+                        <option value="debit">Debit</option>
+                        <option value="credit">Credit</option>
+                    </select>
+
+                    <button class="btn btn-success" type="submit">
+                        Buy a book
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <dl>
+                <dt style="padding-top: 2rem;">Description</dt>
+                <dd class="text-justify">{{ book.description }}</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

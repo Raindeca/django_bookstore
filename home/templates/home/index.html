@@ -1,0 +1,23 @@
+{% extends 'home/base.html' %}
+{% block title %}XYZ Bookstore{% endblock %}
+{% load static %}
+
+{% block body %}
+
+
+    <!-- image-slider -->
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="img-fluid" src="{% static 'home/images/bookstore.jpg' %}">
+                <div class="carousel-caption">
+                    <h1 class="display-4">XYZ Bookstore</h1>
+                    <h3>The Best Bookstore in Indonesia</h3>
+                    <a href="{% url 'account:register' %}"><button type="button"
+                            class="btn btn-outline-light btn-lg">Sign up</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
